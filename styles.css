@@ -1,0 +1,27 @@
+*{
+    viewport-fit: 100%;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 165px);
+    width: 500px;
+    height:500px;
+    border: 5px solid black;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
