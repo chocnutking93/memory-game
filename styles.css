@@ -1,5 +1,6 @@
 *{
     viewport-fit: 100%;
+    background-color: black;
 }
 
 .container{
@@ -46,7 +47,12 @@
 .notice {
     display:flex;
     justify-content: center;
+    color: white;
 }
 
-
+button {
+    color:white;
+    border-radius: 10px;
+    font-size: 2rem;
+}
 
