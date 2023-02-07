@@ -39,6 +39,10 @@
     background-color: red;
 }
 
+.cube:active{
+    background-color: red;
+}
+
 .notice {
     display:flex;
     justify-content: center;
