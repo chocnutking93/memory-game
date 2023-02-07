@@ -12,6 +12,8 @@ let clickCount = 0;
 const cubeArray = [];
 const cubeArrayCopy = [];
 
+const compareArrays = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
+
 // function randomBoxColor () {
 //     cubes.forEach(cube => {
 //         let redCube = cube[Math.floor(Math.random() * cubes.length)]
@@ -45,24 +47,21 @@ function playerTurn() {
         clickCount += 1;
         cubeArrayCopy.push(click);
       }
+      if (compareArrays(cubeArray, cubeArrayCopy)){
+        console.log('next round')
+      }
+      else {
+        console.log('failure')
+      }
     });
   });
 }
-
-// function checkMatch() {
-//   if (cubeArray === cubeArrayCopy) {
-//     notice.innerText = "Nice, next level";
-//   } else {
-//     notice.innerText = "Game over, try again.";
-//   }
-// }
 
 startButton.addEventListener("click", (e) => {
   for (let i = 0; i < rounds; i++) {
     changeColor();
     unchangeColor();
     playerTurn();
-    //   checkMatch();
   }
 
   // firstCube = cubes[Math.floor(Math.random() * cubes.length)]
