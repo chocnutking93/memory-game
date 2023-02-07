@@ -48,10 +48,11 @@ function playerTurn() {
         cubeArrayCopy.push(click);
       }
       if (compareArrays(cubeArray, cubeArrayCopy)){
-        console.log('next round')
+        notice.innerText = 'Nice, next round!'
+        return
       }
       else {
-        console.log('failure')
+        notice.innerText = "Sorry, try again!"
       }
     });
   });
