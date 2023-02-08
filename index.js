@@ -116,16 +116,41 @@ function playerTurn() {
 //   },5000)
 // }
 
+// function reiterateSequence () {
+//   let timesRun = 0;
+//   let i = 0;
+//   const timerId = setInterval(() => {
+//     timesRun += 1;
+//     ++cubeArray[i]
+
+//     if (timesRun === cubeArray.length) {
+//       console.log('all done')
+//       clearInterval(timerId)
+//     }
+//   },1000)
+// }
+
+// function reiterateSequence () {
+//   let i = 0;
+//   console.log(cubeArray[i].dataset)
+//   if (i < cubeArray.length) {
+//     setTimeout(() => {
+//       i+=1;
+//       reiterateSequence(i)
+//     },1000)
+//   }
+// }
+
 function reiterateSequence () {
-  let timesRun = 0;
-  const timerId = setInterval(() => {
-    timesRun += 1;
-    console.log(timesRun)
-    if (timesRun === cubeArray.length) {
-      clearInterval(timerId)
+  let i = 0;
+  const interval = setInterval(() => {
+    console.log(cubeArray[i++]);
+    if (i === cubeArray.length) {
+      clearInterval(interval);
     }
   },1000)
 }
+
 
 startButton.addEventListener("click", (e) => {
   changeColor();
