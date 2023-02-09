@@ -28,15 +28,13 @@ const compareArrays = (a, b) =>
 // let randomCube = cubes[Math.floor(Math.random() * cubes.length)]
 
 function changeColor() {
-  firstCube != firstCube;
+
   const newCube = cubes[Math.floor(Math.random() * cubes.length)];
   console.log(newCube.dataset);
 
-  for (let i = 0; i < rounds; i++) {
-    newCube.classList.add("red");
-    cubeArray.push(newCube);
-    console.log(cubeArray);
-  }
+  newCube.classList.add("red");
+  cubeArray.push(newCube); 
+  console.log(cubeArray);
 }
 
 function unchangeColor() {
@@ -58,13 +56,13 @@ function playerTurn() {
         clickCount += 1;
         cubeArrayCopy.push(click);
       }
-      
+
       if (compareArrays(cubeArray, cubeArrayCopy)) {
         notice.innerText = "Nice, next round!";
         roundsWon += 1;
         rounds += 1;
-        return;
 
+        return;
       } else {
         notice.innerText = "Sorry, try again!";
         return;
@@ -73,8 +71,6 @@ function playerTurn() {
   });
 }
 
-
-
 // function reiterateSequence() {
 //   let index = 0;
 //   while (index < cubeArray.length) {
@@ -82,7 +78,7 @@ function playerTurn() {
 //     setInterval(() => {
 //       cubeArray[index].classList.add("red");
 //     }, 700)
-    
+
 //     setInterval(() => {
 //       cubeArray[index].classList.remove("red");
 //     },700)
@@ -100,7 +96,7 @@ function playerTurn() {
 
 //     setInterval(() => {
 //       cubeArray[i].classList.remove("red");
-      
+
 //     },500)
 //   }
 // }
@@ -141,22 +137,29 @@ function playerTurn() {
 //   }
 // }
 
-function reiterateSequence () {
+function reiterateSequence() {
   let i = 0;
+
+  
   const interval = setInterval(() => {
+
     console.log(cubeArray[i++]);
+    for (let i = 0; i < cubeArray.length; i++){
+      setTimeout(() => {
+        cubeArray[i].classList.add('red');
+      }, i*1000)
+    }
+
     if (i === cubeArray.length) {
       clearInterval(interval);
     }
-  },1000)
+  }, 1000);
 }
-
 
 startButton.addEventListener("click", (e) => {
   changeColor();
   unchangeColor();
   playerTurn();
-
 
 });
 
