@@ -61,25 +61,36 @@ function playerTurn() {
     });
   });
 }
+function nextRound () {
+  for (let i = 0; i < cubeArray.length; i++){
+    setTimeout(() => {
+      cubeArray[i].classList.add('red')
+      setTimeout(() => {
+        cubeArray[i].classList.remove('red');
+      },500)
+    },i*1000)
+  }
+}
 
-function reiterateSequence() {
-  let i = 0;
+
+// function reiterateSequence() {
+//   let i = 0;
 
   
-  const interval = setInterval(() => {
+//   const interval = setInterval(() => {
 
-    console.log(cubeArray[i++]);
-    for (let i = 0; i < cubeArray.length; i++){
-      setTimeout(() => {
-        cubeArray[i].classList.add('red');
-      }, i*1000)
-    }
+//     console.log(cubeArray[i++]);
+//     for (let i = 0; i < cubeArray.length; i++){
+//       setTimeout(() => {
+//         cubeArray[i].classList.add('red');
+//       }, i*1000)
+//     }
 
-    if (i === cubeArray.length) {
-      clearInterval(interval);
-    }
-  }, 1000);
-}
+//     if (i === cubeArray.length) {
+//       clearInterval(interval);
+//     }
+//   }, 1000);
+// }
 
 startButton.addEventListener("click", (e) => {
   changeColor();
