@@ -18,15 +18,6 @@ const cubeArrayCopy = [];
 const compareArrays = (a, b) =>
   a.length === b.length && a.every((v, i) => v === b[i]);
 
-// function randomBoxColor () {
-//     cubes.forEach(cube => {
-//         let redCube = cube[Math.floor(Math.random() * cubes.length)]
-//         console.log(redCube)
-//     })
-// }
-
-// let randomCube = cubes[Math.floor(Math.random() * cubes.length)]
-
 function changeColor() {
 
   const newCube = cubes[Math.floor(Math.random() * cubes.length)];
@@ -71,72 +62,6 @@ function playerTurn() {
   });
 }
 
-// function reiterateSequence() {
-//   let index = 0;
-//   while (index < cubeArray.length) {
-
-//     setInterval(() => {
-//       cubeArray[index].classList.add("red");
-//     }, 700)
-
-//     setInterval(() => {
-//       cubeArray[index].classList.remove("red");
-//     },700)
-//     index++;
-//   }
-// }
-
-// function reiterateSequence () {
-//   for (let i = 0; i < cubeArray.length; i++){
-
-//     setInterval(() => {
-//       cubeArray[i].classList.add("red");
-//       console.log(cubeArray)
-//     }, 1000)
-
-//     setInterval(() => {
-//       cubeArray[i].classList.remove("red");
-
-//     },500)
-//   }
-// }
-
-// function reiterateSequence () {
-//   const timerId = setInterval(() => {
-//     count+=1
-//     console.log(count)
-//   }, 1000)
-//   setTimeout(() => {
-//     clearInterval(timerId);
-//     console.log('stopped at 5 seconds')
-//   },5000)
-// }
-
-// function reiterateSequence () {
-//   let timesRun = 0;
-//   let i = 0;
-//   const timerId = setInterval(() => {
-//     timesRun += 1;
-//     ++cubeArray[i]
-
-//     if (timesRun === cubeArray.length) {
-//       console.log('all done')
-//       clearInterval(timerId)
-//     }
-//   },1000)
-// }
-
-// function reiterateSequence () {
-//   let i = 0;
-//   console.log(cubeArray[i].dataset)
-//   if (i < cubeArray.length) {
-//     setTimeout(() => {
-//       i+=1;
-//       reiterateSequence(i)
-//     },1000)
-//   }
-// }
-
 function reiterateSequence() {
   let i = 0;
 
@@ -160,21 +85,5 @@ startButton.addEventListener("click", (e) => {
   changeColor();
   unchangeColor();
   playerTurn();
-
 });
 
-// firstCube = cubes[Math.floor(Math.random() * cubes.length)]
-
-// const randomCube = cubes[Math.floor(Math.random() * cubes.length)]
-
-// const randomRedCube = randomCube.style.backgroundColor = "#FF0000"
-// console.log(randomCube)
-
-// if (randomCube == randomRedCube) {
-//     return
-// }
-// randomCube.style.backgroundColor = "#FF0000"
-
-// for (let i = 0; i < 1; i++){
-//     return randomRedCube
-// }
