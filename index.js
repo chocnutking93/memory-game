@@ -16,21 +16,22 @@ newCube = cubes[Math.floor(Math.random() * cubes.length)];
 function arraysAreEqual(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     console.log("failure");
-    notice.innerText = `You won ${rounds} rounds, nice.`;
+    notice.innerText = `You won ${roundsWon} rounds, nice.`;
     // startButton.style.display = 'none'
     return false;
   }
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
       console.log("failure");
-      notice.innerText = `You lost, try agian. You completed ${rounds} rounds`
+      notice.innerText = `You lost, try agian. You completed ${roundsWon} rounds`
       setTimeout(resetBoard,5000)
       return false;
       // startButton.style.display = 'none'
     }
   }
-  notice.innerText = `Round ${rounds}`;
   rounds += 1;
+  roundsWon += 1;
+  notice.innerText = `Round ${rounds}`;
   clickCount = 0;
   cubeArrayCopy = [];
   setTimeout(computerTurn, 1000);
