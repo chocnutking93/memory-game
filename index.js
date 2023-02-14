@@ -62,53 +62,6 @@ function showHideCube() {
   hideRandomCube();
 }
 
-// function playerTurn() {
-//   clickCount = 0;
-//   cubes.forEach((cube) => {
-//     cube.addEventListener("click", (e) => {
-//       while (clickCount !== cubeArray.length) {
-//         click = e.target;
-//         console.log(click);
-//         clickCount += 1;
-//         cubeArrayCopy.push(click);
-//       }
-//       if (clickCount === cubeArray.length) {
-//         return arraysAreEqual(cubeArray,cubeArrayCopy)
-//       }
-//     });
-//   });
-// }
-
-// function playerTurn2() {
-//   clickCount = 0;
-//   cubes.forEach((cube) => {
-//     cube.addEventListener("click", (e) => {
-//       for (let i = 0; clickCount < cubeArray.length; i++) {
-//         click = e.target;
-//         clickCount += 1;
-//         console.log(click);
-//         cubeArrayCopy.push(click);
-//       }
-//       clickCount = 0;
-//     });
-//   });
-// }
-
-// function playerTurn() {
-//   clickCount = 0;
-//   cubes.forEach((cube) => {
-//     cube.addEventListener("click", (e) => {
-//       for (let i = 0; clickCount < cubeArray.length; i++) {
-//         click = e.target;
-//         clickCount += 1;
-//         console.log(click);
-//         console.log(clickCount);
-//         cubeArrayCopy.push(click);
-//       }
-//     });
-//   });
-// }
-
 function computerTurn() {
   for (let i = 0; i < cubeArray.length; i++) {
     setTimeout(() => {
@@ -130,18 +83,16 @@ function startGame() {
 
 startButton.addEventListener("click", startGame);
 
-
-
-cubes.forEach(cube => {
+cubes.forEach((cube) => {
   clickCount = 0;
-  cube.addEventListener('click', e => {
+  cube.addEventListener("click", (e) => {
     clickCount += 1;
-    console.log(clickCount)
+    console.log(clickCount);
     click = e.target;
-    console.log(click)
-    cubeArrayCopy.push(click)
+    console.log(click);
+    cubeArrayCopy.push(click);
     if (clickCount === cubeArray.length) {
-      return arraysAreEqual(cubeArray,cubeArrayCopy)
+      return arraysAreEqual(cubeArray, cubeArrayCopy);
     }
-  })
-})
+  });
+});
