@@ -30,6 +30,7 @@ function arraysAreEqual(arr1, arr2) {
   }
   notice.innerText = "Next tound";
   rounds += 1;
+  clickCount = 0;
   cubeArrayCopy = [];
   setTimeout(computerTurn, 1000);
 }
@@ -61,22 +62,22 @@ function showHideCube() {
   hideRandomCube();
 }
 
-function playerTurn() {
-  clickCount = 0;
-  cubes.forEach((cube) => {
-    cube.addEventListener("click", (e) => {
-      while (clickCount !== cubeArray.length) {
-        click = e.target;
-        console.log(click);
-        clickCount += 1;
-        cubeArrayCopy.push(click);
-      }
-      if (clickCount === cubeArray.length) {
-        return arraysAreEqual(cubeArray,cubeArrayCopy)
-      }
-    });
-  });
-}
+// function playerTurn() {
+//   clickCount = 0;
+//   cubes.forEach((cube) => {
+//     cube.addEventListener("click", (e) => {
+//       while (clickCount !== cubeArray.length) {
+//         click = e.target;
+//         console.log(click);
+//         clickCount += 1;
+//         cubeArrayCopy.push(click);
+//       }
+//       if (clickCount === cubeArray.length) {
+//         return arraysAreEqual(cubeArray,cubeArrayCopy)
+//       }
+//     });
+//   });
+// }
 
 // function playerTurn2() {
 //   clickCount = 0;
@@ -124,21 +125,23 @@ function computerTurn() {
 }
 
 function startGame() {
-  // startButton.style.display = 'none'
   showHideCube();
-  playerTurn();
 }
 
 startButton.addEventListener("click", startGame);
 
-function handleClick(e) {
-  cubes.forEach((cube) => {
-    cube.addEventListener("click", (e) => {
-      for (let i = 0; i < cubeArray.length; i++) {
-        click = e.target;
-        console.log(click);
-        cubeArrayCopy.push(click);
-      }
-    });
-  });
-}
+
+
+cubes.forEach(cube => {
+  clickCount = 0;
+  cube.addEventListener('click', e => {
+    clickCount += 1;
+    console.log(clickCount)
+    click = e.target;
+    console.log(click)
+    cubeArrayCopy.push(click)
+    if (clickCount === cubeArray.length) {
+      return arraysAreEqual(cubeArray,cubeArrayCopy)
+    }
+  })
+})
