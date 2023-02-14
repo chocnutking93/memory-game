@@ -16,19 +16,20 @@ newCube = cubes[Math.floor(Math.random() * cubes.length)];
 function arraysAreEqual(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     console.log("failure");
-    notice.innerText = "Sorry, try again";
+    notice.innerText = `You won ${rounds} rounds, nice.`;
     // startButton.style.display = 'none'
     return false;
   }
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
       console.log("failure");
-      notice.innerText = "Sorry, try again";
-      // startButton.style.display = 'none'
+      notice.innerText = `You lost, try agian. You completed ${rounds} rounds`
+      setTimeout(resetBoard,5000)
       return false;
+      // startButton.style.display = 'none'
     }
   }
-  notice.innerText = "Next tound";
+  notice.innerText = `Round ${rounds}`;
   rounds += 1;
   clickCount = 0;
   cubeArrayCopy = [];
