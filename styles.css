@@ -1,12 +1,21 @@
 *{
-    viewport-fit: 100%;
+    /* viewport-fit: 100%; */
     background-color: black;
+}
+
+html{
+    height:100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     display:flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .box {
